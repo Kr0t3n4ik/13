@@ -1,0 +1,22 @@
+class Student:
+
+    def __init__(self, age, name, grades):
+        self.age = age
+        self.name = name
+        self.grades = grades
+
+
+class Group:
+    students = []
+
+    def add(self, student):
+        if isinstance(student, Student):
+            self.students.append(student)
+        else:
+            print('Only a class object can be added Student')
+
+    def delete_by_name(self, name):
+        for index, student in enumerate(self.students):
+            if student.name == name:
+                self.students.remove(index)
+
